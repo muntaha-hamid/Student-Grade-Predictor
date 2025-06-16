@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Student Grade Prediction</h1>
+    
+    <form action="/predict" method="post">
+        <label for="studytime">Study Time:</label>
+        <input type="number" name="studytime" required><br>
+
+        <label for="failures">Failures:</label>
+        <input type="number" name="failures" required><br>
+
+        <label for="absences">Absences:</label>
+        <input type="number" name="absences" required><br>
+
+        <label for="Medu">Mother's Education:</label>
+        <input type="number" name="Medu" required><br>
+
+        <label for="Fedu">Father's Education:</label>
+        <input type="number" name="Fedu" required><br>
+
+        <label for="G1">G1 Grade:</label>
+        <input type="number" name="G1" required><br>
+
+        <label for="G2">G2 Grade:</label>
+        <input type="number" name="G2" required><br>
+
+        <label for="traveltime">Travel Time:</label>
+        <input type="number" name="traveltime" required><br>
+
+        <label for="health">Health:</label>
+        <input type="number" name="health" required><br>
+
+        <label for="Dalc">Daily Alcohol Consumption:</label>
+        <input type="number" name="Dalc" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction Result: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
